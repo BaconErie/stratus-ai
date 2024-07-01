@@ -132,7 +132,7 @@ def on_click(x, y, button, pressed):
     
     if not pressed and str(button) in mouse_last_pressed.keys():
         last_press_time = mouse_last_pressed[str(button)]
-        time_mouse_held[str(button)] = current_timestamp-last_press_time
+        time_mouse_held[str(button)] += current_timestamp-last_press_time
 
         if str(button) not in mouseup_counts.keys():
             mouseup_counts[str(button)] = 1
