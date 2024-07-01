@@ -132,7 +132,11 @@ def on_click(x, y, button, pressed):
     
     if not pressed and str(button) in mouse_last_pressed.keys():
         last_press_time = mouse_last_pressed[str(button)]
-        time_mouse_held[str(button)] += current_timestamp-last_press_time
+
+        if str(button) not in time_mouse_held.keys():
+            time_mouse_held[str(button)] = current_timestamp-last_press_time
+        else:
+            time_mouse_held[str(button)] += current_timestamp-last_press_time
 
         if str(button) not in mouseup_counts.keys():
             mouseup_counts[str(button)] = 1
@@ -189,7 +193,11 @@ def on_release(key_raw):
 
     current_timestamp = datetime.datetime.now().timestamp()
     if key in key_last_pressed.keys():
-        key_time_held[key] = current_timestamp - key_last_pressed[key]
+        if key not in key_time_held.keys():
+            key_time_held[key] = current_timestamp-key_last_pressed[key]
+        else:
+            key_time_held[key] += current_timestamp-key_last_pressed[key]
+
         key_last_pressed.pop(key)
 
     if key not in keyup_counts.keys():
