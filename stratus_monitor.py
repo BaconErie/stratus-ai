@@ -134,6 +134,11 @@ def on_click(x, y, button, pressed):
         last_press_time = mouse_last_pressed[str(button)]
         time_mouse_held[str(button)] = current_timestamp-last_press_time
 
+        if str(button) not in mouseup_counts.keys():
+            mouseup_counts[str(button)] = 1
+        else:
+            mouseup_counts[str(button)] += 1
+
     mouse_last_pressed[str(button)] = current_timestamp
 
 def on_scroll(x, y, dx, dy):
