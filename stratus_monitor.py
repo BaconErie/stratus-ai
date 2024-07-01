@@ -98,7 +98,6 @@ def reset():
 # MOUSE HANDLERS
 
 def on_move(x, y):
-    print(x, y)
     global last_min_x_pos
     global last_min_y_pos
 
@@ -186,6 +185,7 @@ def on_release(key_raw):
     current_timestamp = datetime.datetime.now().timestamp()
     if key in key_last_pressed.keys():
         key_time_held[key] = current_timestamp - key_last_pressed[key]
+        key_last_pressed.pop(key)
 
     if key not in keyup_counts.keys():
         keyup_counts[key] = 1
@@ -253,12 +253,12 @@ while True:
     file.write('minutes_since_start|' + str(int(datetime.datetime.now().timestamp() - start_timestamp / 60)) + '\n')
     file.write('x_histogram|' + dumps(x_histogram) + '\n')
     file.write('y_histogram|' + dumps(y_histogram) + '\n')
-    file.write('keyup_counts|' + dumps(keyup_counts) + '\n')
-    file.write('mouseup_counts|' + dumps(mouseup_counts) + '\n')
-    file.write('key_time_held|' + dumps(key_time_held) + '\n')
-    file.write('time_mouse_held|' + dumps(time_mouse_held) + '\n')
-    file.write('dx_scroll_counts|' + dumps(dx_scroll_counts) + '\n')
-    file.write('dy_scroll_counts|' + dumps(dy_scroll_counts) + '\n')
+    file.write('keyup_counts|' + dumps(dict(sorted(keyup_counts.items()))) + '\n')
+    file.write('mouseup_counts|' + dumps(dict(sorted(mouseup_counts.items()))) + '\n')
+    file.write('key_time_held|' + dumps(dict(sorted(key_time_held.items()))) + '\n')
+    file.write('time_mouse_held|' + dumps(dict(sorted(time_mouse_held.items()))) + '\n')
+    file.write('dx_scroll_counts|' + dumps(dict(sorted(dx_scroll_counts.items()))) + '\n')
+    file.write('dy_scroll_counts|' + dumps(dict(sorted(dy_scroll_counts.items()))) + '\n')
     file.close()
 
     # Read file and add checksum hash
@@ -267,7 +267,6 @@ while True:
 
     # For some reason stray new line at the end of the file
     if contents[-1] == '\n':
-        print('newline at the end???? wtf why')
         contents = contents[:-1]
 
     file.close()
