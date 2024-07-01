@@ -255,7 +255,7 @@ while True:
         y_histogram = {}
 
     file.write('time|' + str(datetime.datetime.now()) + '\n')
-    file.write('minutes_since_start|' + str(int(datetime.datetime.now().timestamp() - start_timestamp / 60)) + '\n')
+    file.write('minutes_since_start|' + str(int((datetime.datetime.now().timestamp() - start_timestamp) / 60)) + '\n')
     file.write('x_histogram|' + dumps(x_histogram) + '\n')
     file.write('y_histogram|' + dumps(y_histogram) + '\n')
     file.write('keyup_counts|' + dumps(dict(sorted(keyup_counts.items()))) + '\n')
