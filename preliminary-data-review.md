@@ -1,6 +1,4 @@
-# Data
-
-## Preliminary review
+# Preliminary review
 
 Viewing the data for some files before determining features.
 
@@ -8,31 +6,31 @@ Game file used is `stratus_log_pf_roblox_1720126745.txt`
 
 Non-game file used is `stratus_log_writing_lecture_notes_1719869300.txt`
 
-### Scaled x-pos
+## Scaled x-pos
 
-![Scaled x pos for game](image-14.png)
+![Scaled x pos for game](images/image-14.png)
 
-![Scaled x pos for active work](image-7.png)
+![Scaled x pos for active work](images/image-7.png)
 
-### Scaled y-pos
+## Scaled y-pos
 
-![Scaled y pos for game](image-1.png)
+![Scaled y pos for game](images/image-1.png)
 
-![Scaled y pos for active work](image-8.png)
+![Scaled y pos for active work](images/image-8.png)
 
-### Percentage of time each mouse button was held
+## Percentage of time each mouse button was held
 
-![Percentage of total time held of each mouse button for game](image-2.png)
+![Percentage of total time held of each mouse button for game](images/image-2.png)
 
-![Percentage of time each mouse button was held for active work](image-9.png)
+![Percentage of time each mouse button was held for active work](images/image-9.png)
 
-### Mouse up counts per minute for each mouse button
+## Mouse up counts per minute for each mouse button
 
-![Average mouse up counts per minute for each mouse for game](image-4.png)
+![Average mouse up counts per minute for each mouse for game](images/image-4.png)
 
-![Average mouse up counts per minute for each mouse for active work](image-10.png)
+![Average mouse up counts per minute for each mouse for active work](images/image-10.png)
 
-### Percentage of time key was held
+## Percentage of time key was held
 
 Only the top 10 most held keys were shown. The graph rapidly taper off near the
 end
@@ -44,11 +42,11 @@ recording software.
 In addition, the plot for active work is more uniform than the plot for playing
 games.
 
-![Percentage of total time held for each key for games](image-5.png)
+![Percentage of total time held for each key for games](images/image-5.png)
 
-![Percentage of total time held for each key for active work](image-11.png)
+![Percentage of total time held for each key for active work](images/image-11.png)
 
-### Average key up counts per minute for each key
+## Average key up counts per minute for each key
 
 Only the top 10 most pressed keys were shown.
 
@@ -62,6 +60,6 @@ space, which are frequently used when writing. "t" is also one of the most
 common letters in English, which also explains why it is one of the most pressed
 keys.
 
-![Average key up counts per minute for each key for games](image-6.png)
+![Average key up counts per minute for each key for games](images/image-6.png)
 
-![Average key up counts per minute for each key for active work](image-12.png)
+![Average key up counts per minute for each key for active work](images/image-12.png)
